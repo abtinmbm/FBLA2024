@@ -82,3 +82,5 @@ def partner_proposal(request):
         form = PartnerForm()
 
     return render(request, "partner_proposal.html", {"form": form})
+def partner_terms(request):
+    return render(request, "partner_terms.html")
