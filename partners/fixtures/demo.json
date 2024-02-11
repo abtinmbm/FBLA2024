@@ -88,7 +88,6 @@
       "name": "Partner Staff - Editor",
       "permissions": [
         ["view_partnerprofile", "partners", "partnerprofile"],
-        ["view_partnerstaff", "partners", "partnerstaff"],
         ["add_resource", "partners", "resource"],
         ["change_resource", "partners", "resource"],
         ["view_resource", "partners", "resource"]
