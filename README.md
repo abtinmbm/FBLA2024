@@ -53,7 +53,7 @@ Resource Sharing: Partners can share resources such as educational materials, in
 - HTML, CSS, and Tailwind CSS ensure sleek aesthetics and responsiveness.
 - Fast and relevant search results are provided by Fuse.js.
 - Smooth interactivity is achieved with jQuery.
-
+- Deployed and hosted for free using [pythonanywhere](pythonanywhere.com)
 
 
 
