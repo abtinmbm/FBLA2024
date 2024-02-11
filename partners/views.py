@@ -29,7 +29,7 @@ def partner_list(request):
         },
     )
 
-# View to return partner list data in JSON format
+# View to return partner list data in JSON format to be used for filtering and searching
 def partner_list_json(request):
     # Fetch public resources
     resources = get_public_resources()

@@ -10,6 +10,8 @@ from .models import (
     PartnerStaff,
     Resource,
 )
+from django.contrib.admin import site
+site.disable_action('delete_selected')
 
 # Registering PartnerTagAdmin to customize display in the admin panel
 class PartnerTagAdmin(admin.ModelAdmin):

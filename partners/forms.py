@@ -24,10 +24,10 @@ class PartnerForm(forms.Form):
     )
     
     # User authentication fields
-    email = forms.EmailField(label="Email")
-    username = forms.CharField(label="Username")
+    email = forms.EmailField(label="Admin Email")
+    username = forms.CharField(label="Admin Username")
     password = forms.CharField(
-        label="Password", widget=forms.PasswordInput(), validators=[validate_password]
+        label="Admin Password", widget=forms.PasswordInput(), validators=[validate_password]
     )
     
     # ReCaptcha field for spam prevention

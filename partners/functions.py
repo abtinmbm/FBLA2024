@@ -3,9 +3,6 @@ from partners.models import PartnerTag, Resource, ResourceTag
 # Function to fetch public resources along with partner information
 def get_public_resources():
     resources = []  # List to store public resources
-    partner_tags = PartnerTag.objects.all()  # Fetch all partner tags
-    resource_tags = ResourceTag.objects.all()  # Fetch all resource tags
-
     # Iterate through active resources
     for resource in Resource.objects.filter(partner__status="active").all():
         # Construct resource dictionary with relevant information
