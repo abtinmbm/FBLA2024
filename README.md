@@ -45,15 +45,14 @@ Resource Sharing: Partners can share resources such as educational materials, in
 
 ## Built With
 
-- Our project is built with Django for a solid foundation.
-- We use django-admin-interface for streamlined content management.
-- django-ckeditor-5 enables dynamic content creation.
-- Security is ensured with django-recaptcha.
-- Image processing is handled with Pillow.
-- HTML, CSS, and Tailwind CSS ensure sleek aesthetics and responsiveness.
-- Fast and relevant search results are provided by Fuse.js.
-- Smooth interactivity is achieved with jQuery.
-- Deployed and hosted for free using [pythonanywhere](pythonanywhere.com)
+- Our project is built with [Django](https://www.djangoproject.com/) for a solid foundation.
+- We use [django-admin-interface](https://pypi.org/project/django-admin-interface/) for streamlined admin panel theme and styling.
+- [django-ckeditor-5](https://pypi.org/project/django-ckeditor-5/) enables dynamic content creation.
+- Security is ensured with [django-recaptcha](https://pypi.org/project/django-recaptcha/).
+- HTML, CSS, and [Tailwind CSS](tailwindcss.com) ensure sleek aesthetics and responsiveness.
+- Fast and relevant search results are provided by [Fuse.js](fusejs.io).
+- Smooth interactivity is achieved with [jQuery](jquery.com)
+- Deployed and hosted for free using [PythonAnywhere](PythonAnywhere.com)
 
 
 
