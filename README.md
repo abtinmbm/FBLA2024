@@ -28,8 +28,6 @@
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
 * [Usage](#usage)
-* [Authors](#authors)
-* [Acknowledgements](#acknowledgements)
 
 ## About The Project
 
@@ -49,10 +47,10 @@ Resource Sharing: Partners can share resources such as educational materials, in
 - We use [django-admin-interface](https://pypi.org/project/django-admin-interface/) for streamlined admin panel theme and styling.
 - [django-ckeditor-5](https://pypi.org/project/django-ckeditor-5/) enables dynamic content creation.
 - Security is ensured with [django-recaptcha](https://pypi.org/project/django-recaptcha/).
-- HTML, CSS, and [Tailwind CSS](tailwindcss.com) ensure sleek aesthetics and responsiveness.
-- Fast and relevant search results are provided by [Fuse.js](fusejs.io).
-- Smooth interactivity is achieved with [jQuery](jquery.com)
-- Deployed and hosted for free using [PythonAnywhere](PythonAnywhere.com)
+- HTML, CSS, and [Tailwind CSS](https://tailwindcss.com/) ensure sleek aesthetics and responsiveness.
+- Fast and relevant search results are provided by [Fuse.js](https://www.fusejs.io/).
+- Smooth interactivity is achieved with [jQuery](https://jquery.com/)
+- Deployed and hosted for free using [PythonAnywhere](https://www.pythonanywhere.com/)
 
 
 
