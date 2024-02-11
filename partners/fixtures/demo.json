@@ -1,0 +1,1475 @@
+[
+  {
+    "model": "admin_interface.theme",
+    "pk": 1,
+    "fields": {
+      "name": "DEFAULT",
+      "active": true,
+      "title": "DEFAULT",
+      "title_color": "#F5DD5D",
+      "title_visible": true,
+      "logo": "",
+      "logo_color": "#FFFFFF",
+      "logo_max_width": 400,
+      "logo_max_height": 100,
+      "logo_visible": false,
+      "favicon": "",
+      "env_name": "",
+      "env_color": "#E74C3C",
+      "env_visible_in_header": true,
+      "env_visible_in_favicon": true,
+      "language_chooser_active": true,
+      "language_chooser_control": "default-select",
+      "language_chooser_display": "code",
+      "css_header_background_color": "#0C4B33",
+      "css_header_text_color": "#44B78B",
+      "css_header_link_color": "#FFFFFF",
+      "css_header_link_hover_color": "#C9F0DD",
+      "css_module_background_color": "#44B78B",
+      "css_module_background_selected_color": "#FFFFCC",
+      "css_module_text_color": "#FFFFFF",
+      "css_module_link_color": "#FFFFFF",
+      "css_module_link_selected_color": "#FFFFFF",
+      "css_module_link_hover_color": "#C9F0DD",
+      "css_module_rounded_corners": true,
+      "css_generic_link_color": "#0C3C26",
+      "css_generic_link_hover_color": "#156641",
+      "css_generic_link_active_color": "#29B864",
+      "css_save_button_background_color": "#0C4B33",
+      "css_save_button_background_hover_color": "#0C3C26",
+      "css_save_button_text_color": "#FFFFFF",
+      "css_delete_button_background_color": "#BA2121",
+      "css_delete_button_background_hover_color": "#A41515",
+      "css_delete_button_text_color": "#FFFFFF",
+      "related_modal_active": true,
+      "related_modal_background_color": "#000000",
+      "related_modal_background_opacity": "0.3",
+      "related_modal_rounded_corners": true,
+      "related_modal_close_button_visible": true,
+      "list_filter_highlight": true,
+      "list_filter_dropdown": true,
+      "list_filter_sticky": true,
+      "list_filter_removal_links": false,
+      "foldable_apps": true,
+      "show_fieldsets_as_tabs": false,
+      "show_inlines_as_tabs": false,
+      "collapsible_stacked_inlines": false,
+      "collapsible_stacked_inlines_collapsed": true,
+      "collapsible_tabular_inlines": false,
+      "collapsible_tabular_inlines_collapsed": true,
+      "recent_actions_visible": true,
+      "form_submit_sticky": false,
+      "form_pagination_sticky": false
+    }
+  },
+  {
+    "model": "auth.group",
+    "pk": 1,
+    "fields": {
+      "name": "Partner Staff - Manager",
+      "permissions": [
+        ["change_partnerprofile", "partners", "partnerprofile"],
+        ["view_partnerprofile", "partners", "partnerprofile"],
+        ["view_partnerstaff", "partners", "partnerstaff"],
+        ["add_partnerstaff", "partners", "partnerstaff"],
+        ["change_partnerstaff", "partners", "partnerstaff"],
+        ["delete_partnerstaff", "partners", "partnerstaff"],
+        ["add_resource", "partners", "resource"],
+        ["change_resource", "partners", "resource"],
+        ["delete_resource", "partners", "resource"],
+        ["view_resource", "partners", "resource"]
+      ]
+    }
+  },
+  {
+    "model": "auth.group",
+    "pk": 2,
+    "fields": {
+      "name": "Partner Staff - Editor",
+      "permissions": [
+        ["view_partnerprofile", "partners", "partnerprofile"],
+        ["view_partnerstaff", "partners", "partnerstaff"],
+        ["add_resource", "partners", "resource"],
+        ["change_resource", "partners", "resource"],
+        ["view_resource", "partners", "resource"]
+      ]
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$0fTsq5RjymErWKHjtyGsDL$cuSuhLRyIt86iVPlWFjemdyMdB7hQFrF2AIz/Zo27JU=",
+      "last_login": "2024-01-21T02:18:33.939Z",
+      "is_superuser": true,
+      "username": "admin_user",
+      "email": "admin@gmail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-01-21T02:18:18.054Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$0fTsq5RjymErWKHjtyGsDL$cuSuhLRyIt86iVPlWFjemdyMdB7hQFrF2AIz/Zo27JU=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "pizzabob_manager",
+      "email": "staff@pizzabob.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-02-04T12:00:00Z",
+      "groups": [1],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "partners.partnerstaff",
+    "pk": 2,
+    "fields": {
+      "role": "manager",
+      "user": 2,
+      "partner": 1
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$0fTsq5RjymErWKHjtyGsDL$cuSuhLRyIt86iVPlWFjemdyMdB7hQFrF2AIz/Zo27JU=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "techinnovators_manager",
+      "email": "techinnovators@gmail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-02-04T12:30:00Z",
+      "groups": [1],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "partners.partnerstaff",
+    "pk": 3,
+    "fields": {
+      "role": "manager",
+      "user": 3,
+      "partner": 2
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$0fTsq5RjymErWKHjtyGsDL$cuSuhLRyIt86iVPlWFjemdyMdB7hQFrF2AIz/Zo27JU=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "bookwormlc_manager",
+      "email": "bookwormlc@gmail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-02-04T13:00:00Z",
+      "groups": [1],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "partners.partnerstaff",
+    "pk": 4,
+    "fields": {
+      "role": "manager",
+      "user": 4,
+      "partner": 3
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$0fTsq5RjymErWKHjtyGsDL$cuSuhLRyIt86iVPlWFjemdyMdB7hQFrF2AIz/Zo27JU=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "financefirstcu_manager",
+      "email": "financefirstcu@gmail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-02-04T13:30:00Z",
+      "groups": [1],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "partners.partnerstaff",
+    "pk": 5,
+    "fields": {
+      "role": "manager",
+      "user": 5,
+      "partner": 4
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 6,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$0fTsq5RjymErWKHjtyGsDL$cuSuhLRyIt86iVPlWFjemdyMdB7hQFrF2AIz/Zo27JU=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "greenearthcs_manager",
+      "email": "greenearthcs@gmail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-02-04T14:00:00Z",
+      "groups": [1],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "partners.partnerstaff",
+    "pk": 6,
+    "fields": {
+      "role": "manager",
+      "user": 6,
+      "partner": 5
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 7,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$0fTsq5RjymErWKHjtyGsDL$cuSuhLRyIt86iVPlWFjemdyMdB7hQFrF2AIz/Zo27JU=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "fitlifefitness_manager",
+      "email": "fitlifefitness@gmail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-02-04T14:30:00Z",
+      "groups": [1],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "partners.partnerstaff",
+    "pk": 7,
+    "fields": {
+      "role": "manager",
+      "user": 7,
+      "partner": 6
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 8,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$0fTsq5RjymErWKHjtyGsDL$cuSuhLRyIt86iVPlWFjemdyMdB7hQFrF2AIz/Zo27JU=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "artisticexpressions_manager",
+      "email": "artisticexpressions@gmail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-02-04T15:00:00Z",
+      "groups": [1],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "partners.partnerstaff",
+    "pk": 8,
+    "fields": {
+      "role": "manager",
+      "user": 8,
+      "partner": 7
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 9,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$0fTsq5RjymErWKHjtyGsDL$cuSuhLRyIt86iVPlWFjemdyMdB7hQFrF2AIz/Zo27JU=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "healthycarewellness_manager",
+      "email": "healthycarewellness@gmail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-02-04T15:30:00Z",
+      "groups": [1],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "partners.partnerstaff",
+    "pk": 9,
+    "fields": {
+      "role": "manager",
+      "user": 9,
+      "partner": 8
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 10,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$0fTsq5RjymErWKHjtyGsDL$cuSuhLRyIt86iVPlWFjemdyMdB7hQFrF2AIz/Zo27JU=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "edexfoundation_manager",
+      "email": "edexfoundation@gmail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-02-04T16:00:00Z",
+      "groups": [1],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "partners.partnerstaff",
+    "pk": 10,
+    "fields": {
+      "role": "manager",
+      "user": 10,
+      "partner": 9
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 11,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$0fTsq5RjymErWKHjtyGsDL$cuSuhLRyIt86iVPlWFjemdyMdB7hQFrF2AIz/Zo27JU=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "doughdelights_manager",
+      "email": "doughdelights@gmail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-02-04T16:30:00Z",
+      "groups": [1],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "partners.partnerstaff",
+    "pk": 11,
+    "fields": {
+      "role": "manager",
+      "user": 11,
+      "partner": 10
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 12,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$0fTsq5RjymErWKHjtyGsDL$cuSuhLRyIt86iVPlWFjemdyMdB7hQFrF2AIz/Zo27JU=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "innovatetechsolutions_manager",
+      "email": "innovatetechsolutions@gmail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-02-04T17:00:00Z",
+      "groups": [1],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "partners.partnerstaff",
+    "pk": 12,
+    "fields": {
+      "role": "manager",
+      "user": 12,
+      "partner": 11
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 13,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$0fTsq5RjymErWKHjtyGsDL$cuSuhLRyIt86iVPlWFjemdyMdB7hQFrF2AIz/Zo27JU=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "linguistichub_manager",
+      "email": "linguistichub@gmail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-02-04T17:30:00Z",
+      "groups": [1],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "partners.partnerstaff",
+    "pk": 13,
+    "fields": {
+      "role": "manager",
+      "user": 13,
+      "partner": 12
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 14,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$0fTsq5RjymErWKHjtyGsDL$cuSuhLRyIt86iVPlWFjemdyMdB7hQFrF2AIz/Zo27JU=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "financeforallbank_manager",
+      "email": "financeforallbank@gmail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-02-04T18:00:00Z",
+      "groups": [1],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "partners.partnerstaff",
+    "pk": 14,
+    "fields": {
+      "role": "manager",
+      "user": 14,
+      "partner": 13
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 15,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$0fTsq5RjymErWKHjtyGsDL$cuSuhLRyIt86iVPlWFjemdyMdB7hQFrF2AIz/Zo27JU=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "greenguardiansclub_manager",
+      "email": "greenguardiansclub@gmail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-02-04T18:30:00Z",
+      "groups": [1],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "partners.partnerstaff",
+    "pk": 15,
+    "fields": {
+      "role": "manager",
+      "user": 15,
+      "partner": 14
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 16,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$0fTsq5RjymErWKHjtyGsDL$cuSuhLRyIt86iVPlWFjemdyMdB7hQFrF2AIz/Zo27JU=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "activelifesports_manager",
+      "email": "activelifesports@gmail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-02-04T19:00:00Z",
+      "groups": [1],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "partners.partnerstaff",
+    "pk": 16,
+    "fields": {
+      "role": "manager",
+      "user": 16,
+      "partner": 15
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 17,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$0fTsq5RjymErWKHjtyGsDL$cuSuhLRyIt86iVPlWFjemdyMdB7hQFrF2AIz/Zo27JU=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "creativeartstudios_manager",
+      "email": "creativeartstudios@gmail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-02-04T19:30:00Z",
+      "groups": [1],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "partners.partnerstaff",
+    "pk": 17,
+    "fields": {
+      "role": "manager",
+      "user": 17,
+      "partner": 16
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 18,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$0fTsq5RjymErWKHjtyGsDL$cuSuhLRyIt86iVPlWFjemdyMdB7hQFrF2AIz/Zo27JU=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "wellnesswisehealthcare_manager",
+      "email": "wellnesswisehealthcare@gmail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-02-04T20:00:00Z",
+      "groups": [1],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "partners.partnerstaff",
+    "pk": 18,
+    "fields": {
+      "role": "manager",
+      "user": 18,
+      "partner": 17
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 19,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$0fTsq5RjymErWKHjtyGsDL$cuSuhLRyIt86iVPlWFjemdyMdB7hQFrF2AIz/Zo27JU=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "futureeducationinitiatives_manager",
+      "email": "futureeducationinitiatives@gmail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-02-04T20:30:00Z",
+      "groups": [1],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "partners.partnerstaff",
+    "pk": 19,
+    "fields": {
+      "role": "manager",
+      "user": 19,
+      "partner": 18
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 20,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$0fTsq5RjymErWKHjtyGsDL$cuSuhLRyIt86iVPlWFjemdyMdB7hQFrF2AIz/Zo27JU=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "gourmetgoodiescatering_manager",
+      "email": "gourmetgoodiescatering@gmail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-02-04T21:00:00Z",
+      "groups": [1],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "partners.partnerstaff",
+    "pk": 20,
+    "fields": {
+      "role": "manager",
+      "user": 20,
+      "partner": 19
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 21,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$0fTsq5RjymErWKHjtyGsDL$cuSuhLRyIt86iVPlWFjemdyMdB7hQFrF2AIz/Zo27JU=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "codemastersclub_manager",
+      "email": "codemastersclub@gmail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-02-04T21:30:00Z",
+      "groups": [1],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "partners.partnerstaff",
+    "pk": 21,
+    "fields": {
+      "role": "manager",
+      "user": 21,
+      "partner": 20
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 22,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$0fTsq5RjymErWKHjtyGsDL$cuSuhLRyIt86iVPlWFjemdyMdB7hQFrF2AIz/Zo27JU=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "readersparadise_manager",
+      "email": "readersparadisebooks@gmail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-02-04T22:00:00Z",
+      "groups": [1],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "partners.partnerstaff",
+    "pk": 22,
+    "fields": {
+      "role": "manager",
+      "user": 22,
+      "partner": 21
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 23,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$0fTsq5RjymErWKHjtyGsDL$cuSuhLRyIt86iVPlWFjemdyMdB7hQFrF2AIz/Zo27JU=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "moneyminds_manager",
+      "email": "moneymindadvisors@gmail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-02-04T22:30:00Z",
+      "groups": [1],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "partners.partnerstaff",
+    "pk": 23,
+    "fields": {
+      "role": "manager",
+      "user": 23,
+      "partner": 22
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 24,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$0fTsq5RjymErWKHjtyGsDL$cuSuhLRyIt86iVPlWFjemdyMdB7hQFrF2AIz/Zo27JU=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "ecoed_manager",
+      "email": "ecoedsoloutions@gmail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-02-05T12:30:00Z",
+      "groups": [1],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "partners.partnerstaff",
+    "pk": 24,
+    "fields": {
+      "role": "manager",
+      "user": 24,
+      "partner": 23
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 25,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$0fTsq5RjymErWKHjtyGsDL$cuSuhLRyIt86iVPlWFjemdyMdB7hQFrF2AIz/Zo27JU=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "fitfamfitness_manager",
+      "email": "fitfamfitness@gmail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-02-05T13:00:00Z",
+      "groups": [1],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "partners.partnerstaff",
+    "pk": 25,
+    "fields": {
+      "role": "manager",
+      "user": 25,
+      "partner": 24
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 26,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$0fTsq5RjymErWKHjtyGsDL$cuSuhLRyIt86iVPlWFjemdyMdB7hQFrF2AIz/Zo27JU=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "culturalconnections_manager",
+      "email": "culturalconnections@gmail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-02-05T13:00:00Z",
+      "groups": [1],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "partners.partnerstaff",
+    "pk": 26,
+    "fields": {
+      "role": "manager",
+      "user": 26,
+      "partner": 25
+    }
+  },
+  {
+    "model": "partners.partnerprofile",
+    "pk": 1,
+    "fields": {
+      "name": "Pizza Bob",
+      "status": "active",
+      "description": "Pizza Bob is an indivdually owned and run pizza restaurant. We are committed to supporting schools and communities with nutrition programs and resources.",
+      "website": "pizzabob.ca",
+      "logo": "PizzaBob.png",
+      "contact_email": "PizzaBob@gmail.com",
+      "contact_phone": "(905) 737-6161",
+      "tags": [1]
+    }
+  },
+  {
+    "model": "partners.partnerprofile",
+    "pk": 2,
+    "fields": {
+      "name": "Tech Innovators Inc.",
+      "status": "active",
+      "description": "Tech Innovators Inc. is a leading technology company specializing in cutting-edge innovations and solutions. With a focus on science and technology, they collaborate with schools to enhance STEM programs and provide students with hands-on learning experiences.",
+      "website": "techinnovators.com",
+      "logo": "TechInnovators.png",
+      "contact_email": "techinnovators@gmail.com",
+      "contact_phone": "(123) 456-7890",
+      "tags": [2]
+    }
+  },
+  {
+    "model": "partners.partnerprofile",
+    "pk": 3,
+    "fields": {
+      "name": "Bookworm Learning Center",
+      "status": "active",
+      "description": "Bookworm Learning Center is dedicated to promoting language and literacy skills among students. Through literacy programs and language learning centers, they collaborate with schools to enhance students' language and literacy proficiency.",
+      "website": "bookwormlc.com",
+      "logo": "BookwormLC.jpg",
+      "contact_email": "bookwormlc@gmail.com",
+      "contact_phone": "(987) 654-3210",
+      "tags": [3]
+    }
+  },
+  {
+    "model": "partners.partnerprofile",
+    "pk": 4,
+    "fields": {
+      "name": "Finance First Credit Union",
+      "status": "active",
+      "description": "Finance First Credit Union is committed to supporting schools and communities with financial education and resources. They collaborate with schools to provide financial literacy programs and resources for students and their families.",
+      "website": "financefirstcu.com",
+      "logo": "FinanceFirst.png",
+      "contact_email": "financefirstcu@gmail.com",
+      "contact_phone": "(555) 123-4567",
+      "tags": [4]
+    }
+  },
+  {
+    "model": "partners.partnerprofile",
+    "pk": 5,
+    "fields": {
+      "name": "GreenEarth Conservation Society",
+      "status": "active",
+      "description": "GreenEarth Conservation Society collaborates with schools to promote environmental awareness and sustainability. They work together to engage students in environmental initiatives and conservation projects.",
+      "website": "greenearthcs.org",
+      "logo": "GreenEarth.png",
+      "contact_email": "greenearthcs@gmail.com",
+      "contact_phone": "(789) 012-3456",
+      "tags": [5,9]
+    }
+  },
+  {
+    "model": "partners.partnerprofile",
+    "pk": 6,
+    "fields": {
+      "name": "FitLife Fitness Club",
+      "status": "active",
+      "description": "FitLife Fitness Club contributes to students' physical well-being by supporting sports clubs, fitness centers, and recreation programs. They provide opportunities for students to engage in physical activities and maintain a healthy lifestyle.",
+      "website": "fitlifefitness.com",
+      "logo": "FitLife.png",
+      "contact_email": "fitlifefitness@gmail.com",
+      "contact_phone": "(456) 789-0123",
+      "tags": [6]
+    }
+  },
+  {
+    "model": "partners.partnerprofile",
+    "pk": 7,
+    "fields": {
+      "name": "Artistic Expressions Gallery",
+      "status": "active",
+      "description": "Artistic Expressions Gallery collaborates with schools to enrich students' exposure to arts and culture. They work together to bring museums, performing arts groups, and art galleries into the school environment.",
+      "website": "artisticexpressions.com",
+      "logo": "ArtisticExpressions.png",
+      "contact_email": "artisticexpressions@gmail.com",
+      "contact_phone": "(321) 654-9870",
+      "tags": [7]
+    }
+  },
+  {
+    "model": "partners.partnerprofile",
+    "pk": 8,
+    "fields": {
+      "name": "HealthyCare Wellness Center",
+      "status": "active",
+      "description": "HealthyCare Wellness Center offers healthcare services, counseling, and nutrition programs to support the overall well-being of students and staff. They collaborate with schools to provide essential health and wellness resources.",
+      "website": "healthycarewellness.com",
+      "logo": "HealthyCare.png",
+      "contact_email": "healthycarewellness@gmail.com",
+      "contact_phone": "(876) 543-2109",
+      "tags": [1]
+    }
+  },
+  {
+    "model": "partners.partnerprofile",
+    "pk": 9,
+    "fields": {
+      "name": "Education Excellence Foundation",
+      "status": "active",
+      "description": "Education Excellence Foundation collaborates with schools to enhance educational outcomes. They work with school districts, universities, and vocational training centers to provide valuable resources and support for students.",
+      "website": "edexfoundation.org",
+      "logo": "EducationExcellence.png",
+      "contact_email": "edexfoundation@gmail.com",
+      "contact_phone": "(234) 567-8901",
+      "tags": [8]
+    }
+  },
+  {
+    "model": "partners.partnerprofile",
+    "pk": 10,
+    "fields": {
+      "name": "Dough Delights Bakery",
+      "status": "active",
+      "description": "Dough Delights Bakery is a local bakery dedicated to providing delicious and freshly baked goods. They collaborate with schools to support nutrition programs and ensure students have access to wholesome snacks.",
+      "website": "doughdelights.com",
+      "logo": "DoughDelights.jpg",
+      "contact_email": "doughdelights@gmail.com",
+      "contact_phone": "(555) 678-9012",
+      "tags": [1]
+    }
+  },
+  {
+    "model": "partners.partnerprofile",
+    "pk": 11,
+    "fields": {
+      "name": "InnovateTech Solutions",
+      "status": "active",
+      "description": "InnovateTech Solutions is a tech company specializing in innovative solutions for education. They collaborate with schools to provide cutting-edge technology resources and enhance students' STEM education.",
+      "website": "innovatetechsolutions.com",
+      "logo": "InnovateTech.png",
+      "contact_email": "innovatetechsolutions@gmail.com",
+      "contact_phone": "(789) 012-3456",
+      "tags": [2]
+    }
+  },
+  {
+    "model": "partners.partnerprofile",
+    "pk": 12,
+    "fields": {
+      "name": "Linguistic Learning Hub",
+      "status": "active",
+      "description": "Linguistic Learning Hub is a language and literacy-focused center offering language courses and literacy programs. They collaborate with schools to enhance students' language skills and foster a love for reading.",
+      "website": "linguistichub.com",
+      "logo": "LingusticLearning.png",
+      "contact_email": "linguistichub@gmail.com",
+      "contact_phone": "(234) 567-8901",
+      "tags": [3]
+    }
+  },
+  {
+    "model": "partners.partnerprofile",
+    "pk": 13,
+    "fields": {
+      "name": "FinanceForAll Bank",
+      "status": "active",
+      "description": "FinanceForAll Bank is committed to financial education and literacy. They collaborate with schools to provide workshops and resources on banking, budgeting, and financial planning.",
+      "website": "financeforallbank.com",
+      "logo": "FinanceForAll.png",
+      "contact_email": "financeforallbank@gmail.com",
+      "contact_phone": "(321) 654-9870",
+      "tags": [4]
+    }
+  },
+  {
+    "model": "partners.partnerprofile",
+    "pk": 14,
+    "fields": {
+      "name": "GreenGuardians Eco Club",
+      "status": "active",
+      "description": "GreenGuardians Eco Club is a student-led environmental organization. They collaborate with schools to organize eco-friendly initiatives, tree planting events, and promote sustainable practices.",
+      "website": "greenguardiansclub.org",
+      "logo": "GreenGuardians.jpg",
+      "contact_email": "greenguardiansclub@gmail.com",
+      "contact_phone": "(876) 543-2109",
+      "tags": [5, 9]
+    }
+  },
+  {
+    "model": "partners.partnerprofile",
+    "pk": 15,
+    "fields": {
+      "name": "ActiveLife Sports Academy",
+      "status": "active",
+      "description": "ActiveLife Sports Academy is dedicated to promoting sports and recreation among students. They collaborate with schools to provide coaching, sports equipment, and organize recreational events.",
+      "website": "activelifesports.com",
+      "logo": "ActiveLife.png",
+      "contact_email": "activelifesports@gmail.com",
+      "contact_phone": "(416) 789-0123",
+      "tags": [6]
+    }
+  },
+  {
+    "model": "partners.partnerprofile",
+    "pk": 16,
+    "fields": {
+      "name": "CreativeArt Studios",
+      "status": "active",
+      "description": "CreativeArt Studios collaborates with schools to bring artistic experiences to students. They organize art exhibitions, workshops, and performances to enrich students' exposure to arts and culture.",
+      "website": "creativeartstudios.com",
+      "logo": "CreativeArt.png",
+      "contact_email": "creativeartstudios@gmail.com",
+      "contact_phone": "(555) 423-4567",
+      "tags": [7]
+    }
+  },
+  {
+    "model": "partners.partnerprofile",
+    "pk": 17,
+    "fields": {
+      "name": "WellnessWise Healthcare",
+      "status": "active",
+      "description": "WellnessWise Healthcare provides comprehensive healthcare services to students and staff. They collaborate with schools to offer health check-ups and counseling sessions.",
+      "website": "wellnesswisehealthcare.com",
+      "logo": "WellnessWise.jpg",
+      "contact_email": "wellnesswisehealthcare@gmail.com",
+      "contact_phone": "(647) 456-7890",
+      "tags": [1]
+    }
+  },
+  {
+    "model": "partners.partnerprofile",
+    "pk": 18,
+    "fields": {
+      "name": "FutureEducation Initiatives",
+      "status": "active",
+      "description": "FutureEducation Initiatives collaborates with schools to provide resources and support for educational excellence. They work with universities, vocational training centers, and school districts.",
+      "website": "futureeducationinitiatives.org",
+      "logo": "FutureEducation.png",
+      "contact_email": "futureeducationinitiatives@gmail.com",
+      "contact_phone": "(437) 012-3456",
+      "tags": [8]
+    }
+  },
+  {
+    "model": "partners.partnerprofile",
+    "pk": 19,
+    "fields": {
+      "name": "GourmetGoodies Catering",
+      "status": "active",
+      "description": "GourmetGoodies Catering provides high-quality catering services for school events. They collaborate with schools to offer delicious and nutritious food options for students and staff.",
+      "website": "gourmetgoodiescatering.com",
+      "logo": "GourmetGoodies.png",
+      "contact_email": "gourmetgoodiescatering@gmail.com",
+      "contact_phone": "(876) 543-2109",
+      "tags": [1, 9]
+    }
+  },
+  {
+    "model": "partners.partnerprofile",
+    "pk": 20,
+    "fields": {
+      "name": "CodeMasters Programming Club",
+      "status": "active",
+      "description": "CodeMasters Programming Club encourages students to explore coding and programming. They collaborate with schools to provide coding workshops, hackathons, and programming resources.",
+      "website": "codemastersclub.com",
+      "logo": "CodeMasters.png",
+      "contact_email": "codemastersclub@gmail.com",
+      "contact_phone": "(437) 654-9870",
+      "tags": [2]
+    }
+  },
+  {
+    "model": "partners.partnerprofile",
+    "pk": 21,
+    "fields": {
+      "name": "ReadersParadise Bookstore",
+      "status": "active",
+      "description": "ReadersParadise Bookstore collaborates with schools to promote a love for reading. They provide book fairs, author visits, and reading programs to enhance students' literacy skills.",
+      "website": "readersparadisebooks.com",
+      "logo": "ReadersParadise.png",
+      "contact_email": "readersparadisebooks@gmail.com",
+      "contact_phone": "(437) 567-8901",
+      "tags": [3]
+    }
+  },
+  {
+    "model": "partners.partnerprofile",
+    "pk": 22,
+    "fields": {
+      "name": "MoneyMinds Financial Advisors",
+      "status": "active",
+      "description": "MoneyMinds Financial Advisors collaborate with schools to provide financial planning and advisory services. They offer workshops on budgeting, investing, and financial goal setting.",
+      "website": "moneymindsadvisors.com",
+      "logo": "MoneyMinds.png",
+      "contact_email": "moneymindsadvisors@gmail.com",
+      "contact_phone": "(437) 678-9012",
+      "tags": [4]
+    }
+  },
+  {
+    "model": "partners.partnerprofile",
+    "pk": 23,
+    "fields": {
+      "name": "EcoEd Solutions",
+      "status": "active",
+      "description": "EcoEd Solutions collaborates with schools to integrate environmental education into the curriculum. They provide resources, workshops, and outdoor experiences to promote sustainability.",
+      "website": "ecoedsolutions.org",
+      "logo": "EcoEd.png",
+      "contact_email": "ecoedsolutions@gmail.com",
+      "contact_phone": "(321) 654-9870",
+      "tags": [5, 9]
+    }
+  },
+  {
+    "model": "partners.partnerprofile",
+    "pk": 24,
+    "fields": {
+      "name": "FitFam Family Fitness",
+      "status": "active",
+      "description": "FitFam Family Fitness promotes family fitness and well-being. They collaborate with schools to provide family-oriented fitness classes, wellness programs, and health resources.",
+      "website": "fitfamfitness.com",
+      "logo": "FitFam.jpg",
+      "contact_email": "fitfamfitness@gmail.com",
+      "contact_phone": "(876) 543-2109",
+      "tags": [6]
+    }
+  },
+  {
+    "model": "partners.partnerprofile",
+    "pk": 25,
+    "fields": {
+      "name": "CulturalConnections Museum",
+      "status": "active",
+      "description": "CulturalConnections Museum collaborates with schools to enrich students' exposure to diverse cultures. They organize cultural exhibits, workshops, and events to foster an appreciation for global perspectives.",
+      "website": "culturalconnectionsmuseum.com",
+      "logo": "CulturalConnections.png",
+      "contact_email": "culturalconnectionsmuseum@gmail.com",
+      "contact_phone": "(905) 456-7890",
+      "tags": [7]
+    }
+  },
+  {
+    "model": "partners.partnertag",
+    "pk": 1,
+    "fields": {
+      "name": "Food & Nutrition",
+      "description": "School nutrition programs and partnerships address the nutritional needs of students and the community."
+    }
+  },
+  {
+    "model": "partners.partnertag",
+    "pk": 2,
+    "fields": {
+      "name": "STEM",
+      "description": "Science labs and STEM programs supporting the school's focus on science, technology, engineering, and mathematics education."
+    }
+  },
+  {
+    "model": "partners.partnertag",
+    "pk": 3,
+    "fields": {
+      "name": "Language & Literacy",
+      "description": "Literacy programs and language learning centers collaborating with the school to enhance students' language and literacy skills."
+    }
+  },
+  {
+    "model": "partners.partnertag",
+    "pk": 4,
+    "fields": {
+      "name": "Business & Finance",
+      "description": "Banks, credit unions, and financial literacy programs supporting the school and its community with financial education and resources."
+    }
+  },
+  {
+    "model": "partners.partnertag",
+    "pk": 5,
+    "fields": {
+      "name": "Environment & Climate",
+      "description": "Environmental organizations and conservation groups working with the school to promote environmental awareness and sustainability."
+    }
+  },
+  {
+    "model": "partners.partnertag",
+    "pk": 6,
+    "fields": {
+      "name": "Fitness & Health",
+      "description": "Fitness centers and health checkups, contributing to students' physical well-being and recreational opportunities."
+    }
+  },
+  {
+    "model": "partners.partnertag",
+    "pk": 7,
+    "fields": {
+      "name": "Arts & Culture",
+      "description": "Museums, performing arts groups, and art galleries collaborating with the school to enrich students' exposure to arts and culture."
+    }
+  },
+  {
+    "model": "partners.partnertag",
+    "pk": 8,
+    "fields": {
+      "name": "College & University",
+      "description": "Entities collaborating with the school to enhance educational outcomes, including school districts, educational foundations, universities, and vocational training centers."
+    }
+  },
+  {
+    "model": "partners.partnertag",
+    "pk": 9,
+    "fields": {
+      "name": "Non-Profit & Community",
+      "description": "Non-profit organizations and community groups collaborating with the school to provide resources and support for educational excellence."
+    }
+  },
+  {
+    "model": "partners.resourcetag",
+    "pk": 1,
+    "fields": {
+      "name": "Internships",
+      "description": "Opportunities for students to gain practical experience in various fields through internships."
+    }
+  },
+  {
+    "model": "partners.resourcetag",
+    "pk": 2,
+    "fields": {
+      "name": "Jobs",
+      "description": "Job listings and career opportunities for students and community members."
+    }
+  },
+  {
+    "model": "partners.resourcetag",
+    "pk": 3,
+    "fields": {
+      "name": "Coupons",
+      "description": "Discounts and special offers provided by local businesses to support the community."
+    }
+  },
+  {
+    "model": "partners.resourcetag",
+    "pk": 4,
+    "fields": {
+      "name": "Volunteering",
+      "description": "Opportunities for individuals to contribute their time and skills to community service projects."
+    }
+  },
+  {
+    "model": "partners.resourcetag",
+    "pk": 5,
+    "fields": {
+      "name": "Events",
+      "description": "Upcoming events and activities for students, parents, and community members to participate in."
+    }
+  },
+  {
+    "model": "partners.resourcetag",
+    "pk": 6,
+    "fields": {
+      "name": "Scholarships",
+      "description": "Financial aid opportunities for students pursuing higher education."
+    }
+  },
+  {
+    "model": "partners.resourcetag",
+    "pk": 7,
+    "fields": {
+      "name": "Mentorship",
+      "description": "Online courses, study materials, and educational resources to support learning."
+    }
+  },
+  {
+    "model": "partners.resourcetag",
+    "pk": 8,
+    "fields": {
+      "name": "Networking",
+      "description": "Opportunities for students to connect with professionals and industry experts."
+    }
+  },
+  {
+    "model": "partners.resource",
+    "pk": 1,
+    "fields": {
+      "name": "Pizza Internship",
+      "description": "Pizza Bob is thrilled to offer an exciting Culinary Internship that combines your love for great food with real-world kitchen expertise. This internship is designed to provide aspiring chefs and culinary students with a unique opportunity to hone their skills, learn from industry experts, and contribute to the creation of mouthwatering menu items that delight our customers worldwide. Don't hesisate to take a chance and join us!",
+      "partner": 1,
+      "tags": [1]
+    }
+  },
+  {
+    "model": "partners.resource",
+    "pk": 2,
+    "fields": {
+      "name": "Tech Innovators Opportunities",
+      "description": "Tech Innovators Inc. is at the forefront of technological innovation, and we're constantly on the lookout for talented individuals to join our dynamic team. Explore exciting career opportunities in the fields of science and technology with Tech Innovators Inc. We offer a collaborative work environment, challenging projects, and a chance to make a meaningful impact in the world of STEM. Join us in shaping the future of technology!",
+      "partner": 2,
+      "tags": [2, 8]
+    }
+  },
+  {
+    "model": "partners.resource",
+    "pk": 3,
+    "fields": {
+      "name": "Bookworm Literacy Program",
+      "description": "Embark on a journey of words and imagination with Bookworm Learning Center's Literacy Program. Our program is designed for students to volunteer and share their language and literacy skills to other students who need the extra help, fostering a love for reading and effective communication. Join us in creating a supportive environment where language comes to life, and literacy becomes a lifelong adventure!",
+      "partner": 3,
+      "tags": [4, 7]
+    }
+  },
+  {
+    "model": "partners.resource",
+    "pk": 4,
+    "fields": {
+      "name": "Financial Literacy Workshop",
+      "description": "Unlock the secrets of financial literacy with Finance First Credit Union. Join our engaging workshop designed to empower students and the community with essential financial knowledge. From budgeting basics to understanding credit, our workshop covers it all. Take the first step towards financial success with Finance First Credit Union!",
+      "partner": 4,
+      "tags": [7]
+    }
+  },
+  {
+    "model": "partners.resource",
+    "pk": 5,
+    "fields": {
+      "name": "Environmental Awareness Event",
+      "description": "Join GreenEarth Conservation Society in our mission to promote environmental awareness and sustainability. Attend our upcoming event to learn about eco-friendly practices, conservation initiatives, and how you can make a positive impact on the planet. Together, let's create a greener and healthier future!",
+      "partner": 5,
+      "tags": [5]
+    }
+  },
+  {
+    "model": "partners.resource",
+    "pk": 6,
+    "fields": {
+      "name": "Fitness Club Wellness Workshop",
+      "description": "Prioritize your well-being with FitLife Fitness Club's Wellness Workshop. Discover the importance of physical fitness, healthy living, and recreational activities in maintaining a balanced lifestyle. Join us on a journey to optimal health and well-being!",
+      "partner": 6,
+      "tags": [7]
+    }
+  },
+  {
+    "model": "partners.resource",
+    "pk": 7,
+    "fields": {
+      "name": "Art Exhibition",
+      "description": "Immerse yourself in a world of creativity and expression at the Artistic Expressions Gallery's upcoming art exhibition. Join us for an inspiring showcase of diverse artworks, performances, and cultural experiences. Let art enrich your life and broaden your perspectives!",
+      "partner": 7,
+      "tags": [5]
+    }
+  },
+  {
+    "model": "partners.resource",
+    "pk": 8,
+    "fields": {
+      "name": "Health Check-up Event",
+      "description": "Prioritize your health with HealthyCare Wellness Center. Attend our health check-up event for comprehensive healthcare services, counseling sessions, and nutrition programs. Take proactive steps towards a healthier and happier life!",
+      "partner": 8,
+      "tags": [5]
+    }
+  },
+  {
+    "model": "partners.resource",
+    "pk": 9,
+    "fields": {
+      "name": "Scholarship Program",
+      "description": "Unlock the doors to educational opportunities with the Education Excellence Foundation Scholarship Program. We believe in supporting students on their academic journey. Explore scholarship opportunities that pave the way for a brighter and more promising future!",
+      "partner": 9,
+      "tags": [6, 8]
+    }
+  },
+  {
+    "model": "partners.resource",
+    "pk": 10,
+    "fields": {
+      "name": "Event Discounts",
+      "description": "Indulge in delightful culinary experiences with GourmetGoodies Catering. As a special treat for our community, enjoy exclusive event discounts on our catering services. Whether it's a school event or a community gathering, let us elevate your culinary experience!",
+      "partner": 10,
+      "tags": [3]
+    }
+  },
+  {
+    "model": "partners.resource",
+    "pk": 11,
+    "fields": {
+      "name": "Coding Bootcamp",
+      "description": "Unleash your coding potential with InnovateTech Solutions' Coding Bootcamp. Join our intensive program designed to equip students with the skills needed for success in the world of technology. Explore the realms of programming, problem-solving, and innovation. Get ready to code your future!",
+      "partner": 11,
+      "tags": [2, 7]
+    }
+  },
+  {
+    "model": "partners.resource",
+    "pk": 12,
+    "fields": {
+      "name": "Language Courses",
+      "description": "Embark on a linguistic journey with Linguistic Learning Hub's language courses. Our programs are designed to enhance language skills and promote a multicultural learning experience. Join us in mastering the art of communication and broadening your horizons!",
+      "partner": 12,
+      "tags": [7]
+    }
+  },
+  {
+    "model": "partners.resource",
+    "pk": 13,
+    "fields": {
+      "name": "Accounting Volunteering",
+      "description": "Volunteer for us and assist by putting your accounting skills to the test! We will mentor you along the way!",
+      "partner": 13,
+      "tags": [4, 7]
+    }
+  },
+  {
+    "model": "partners.resource",
+    "pk": 14,
+    "fields": {
+      "name": "Conservation Workshop",
+      "description": "Join EarthGuardians in our Conservation Workshop and become a guardian of the environment. Learn about sustainable practices, conservation initiatives, and how you can contribute to a healthier planet. Let's work together to safeguard our natural treasures!",
+      "partner": 14,
+      "tags": [7]
+    }
+  },
+  {
+    "model": "partners.resource",
+    "pk": 15,
+    "fields": {
+      "name": "Assistant Coach",
+      "description": "Become an assistant coach for our sports classes designed for students to stay active, healthy, and connected. Discover the joy of fitness together and create lasting memories and skills for students working towards their best well-being!",
+      "partner": 15,
+      "tags": [2, 8]
+    }
+  },
+  {
+    "model": "partners.resource",
+    "pk": 16,
+    "fields": {
+      "name": "Art Equipment Coupons",
+      "description": "For our beloved artist community, enjoy exclusive discounts on our art equipment. let us elevate your artistic experience",
+      "partner": 16,
+      "tags": [3]
+    }
+  },
+  {
+    "model": "partners.resource",
+    "pk": 17,
+    "fields": {
+      "name": "Healthcare Services",
+      "description": "Prioritize your health with WellnessWonders Healthcare Services. Access comprehensive healthcare services, counseling, and nutrition programs to support your overall well-being. Let's embark on a journey towards a healthier and happier you!",
+      "partner": 17,
+      "tags": [5]
+    }
+  },
+  {
+    "model": "partners.resource",
+    "pk": 18,
+    "fields": {
+      "name": "Scholarship Foundation",
+      "description": "Build a brighter future with the FutureBuilders Scholarship Foundation. Explore scholarship opportunities that pave the way for academic success. We believe in empowering students to achieve their educational dreams. Your future begins with us!",
+      "partner": 18,
+      "tags": [6, 8]
+    }
+  },
+  {
+    "model": "partners.resource",
+    "pk": 19,
+    "fields": {
+      "name": "Culinary Internship",
+      "description": "Embark on a culinary journey with GastronomyGurus Culinary Workshop. Join our internship for an immersive experience where you'll learn culinary techniques, explore diverse cuisines, and elevate your cooking skills. Let the world of gastronomy inspire your taste buds!",
+      "partner": 19,
+      "tags": [1]
+    }
+  },
+  {
+    "model": "partners.resource",
+    "pk": 20,
+    "fields": {
+      "name": "Coding Club",
+      "description": "Become a coding master with TechMasters Coding Club. Join our coding wether you are a professional or beginner for sessions where you'll learn programming languages, tackle coding challenges, and develop your problem-solving skills. Unleash your potential in the world of technology!",
+      "partner": 20,
+      "tags": [5, 7]
+    }
+  },
+  {
+    "model": "partners.resource",
+    "pk": 21,
+    "fields": {
+      "name": "Language Exchange Program",
+      "description": "Embark on a linguistic adventure with LinguisticExplorers Language Exchange Program. Join us in exploring different languages, cultures, and making connections with language enthusiasts worldwide. Let language be the bridge to new horizons!",
+      "partner": 21,
+      "tags": [5]
+    }
+  },
+  {
+    "model": "partners.resource",
+    "pk": 22,
+    "fields": {
+      "name": "Advisors Financial Consultation",
+      "description": "Take control of your financial future with MoneyMinds Advisors. Schedule a financial consultation to receive personalized advice on budgeting, investments, and financial planning. Let us guide you towards financial well-being!",
+      "partner": 22,
+      "tags": [7]
+    }
+  },
+  {
+    "model": "partners.resource",
+    "pk": 23,
+    "fields": {
+      "name": "Environmental Education Resources",
+      "description": "EcoEd Solutions collaborates with schools to integrate environmental education into the curriculum. Access resources, workshops, and outdoor experiences that promote sustainability. Join us in fostering environmental awareness and creating a greener future!",
+      "partner": 23,
+      "tags": [5]
+    }
+  },
+  {
+    "model": "partners.resource",
+    "pk": 24,
+    "fields": {
+      "name": "Family Wellness Program",
+      "description": "Prioritize your family's wellness with FitFam Family Fitness. Join our Family Wellness Program designed to promote health and bonding within families. Discover the joy of fitness together and create a healthy lifestyle for your loved ones!",
+      "partner": 24,
+      "tags": [7]
+    }
+  },
+  {
+    "model": "partners.resource",
+    "pk": 25,
+    "fields": {
+      "name": "Cultural Enrichment Event",
+      "description": "Immerse yourself in diverse cultures at CulturalConnections Museum's Cultural Enrichment Event. Join us for an exploration of art, traditions, and global perspectives. Let's celebrate the rich tapestry of cultures that shape our world!",
+      "partner": 25,
+      "tags": [5]
+    }
+  }
+]
