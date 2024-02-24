@@ -844,7 +844,7 @@
       "logo": "HealthyCare.png",
       "contact_email": "healthycarewellness@gmail.com",
       "contact_phone": "(876) 543-2109",
-      "tags": [1]
+      "tags": [1, 6]
     }
   },
   {
@@ -970,7 +970,7 @@
       "logo": "WellnessWise.jpg",
       "contact_email": "wellnesswisehealthcare@gmail.com",
       "contact_phone": "(647) 456-7890",
-      "tags": [1]
+      "tags": [1, 6]
     }
   },
   {
@@ -1328,7 +1328,7 @@
       "name": "Coding Bootcamp",
       "description": "Unleash your coding potential with InnovateTech Solutions' Coding Bootcamp. Join our intensive program designed to equip students with the skills needed for success in the world of technology. Explore the realms of programming, problem-solving, and innovation. Get ready to code your future!",
       "partner": 11,
-      "tags": [2, 7]
+      "tags": [7]
     }
   },
   {
@@ -1428,7 +1428,7 @@
       "name": "Language Exchange Program",
       "description": "Embark on a linguistic adventure with LinguisticExplorers Language Exchange Program. Join us in exploring different languages, cultures, and making connections with language enthusiasts worldwide. Let language be the bridge to new horizons!",
       "partner": 21,
-      "tags": [5]
+      "tags": [5, 8]
     }
   },
   {
