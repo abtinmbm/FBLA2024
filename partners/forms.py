@@ -14,7 +14,7 @@ class PartnerForm(forms.Form):
     logo = forms.ImageField(label="Logo", required=False)
     website = forms.URLField(label="Website", initial="https://")
     contact_email = forms.EmailField(label="Contact Email")
-    contact_phone = forms.CharField(label="Contact Phone", required=False)
+    contact_phone = forms.CharField(label="Contact Phone",)
     
     # Field for selecting multiple tags from the PartnerTag model
     tags = forms.ModelMultipleChoiceField(
