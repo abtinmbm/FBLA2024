@@ -20,119 +20,132 @@
         -webkit-appearance: none;
       }
     </style>
-    <script>
+      <script>
+        $(document).ready(function () {
+          var jsonData;
+          var originalOrder = []; // Store original order of resource boxes
 
-      $(document).ready(function () {
-        // Get JSON data to use for searching and filtering
-        var jsonData;
-        $.getJSON("/json/partner_list", function (request) {
-          jsonData = request.data;
-        });
+          // Get JSON data to use for searching and filtering
+          $.getJSON("/json/partner_list", function (request) {
+            jsonData = request.data;
 
-        function updateResults() {
-          // Update the results based on the search query and filters
-          $(".resource").hide();
-          $("#no-resource-found").hide();
-          const partnerTags = $(".partner-tag-checkbox:checked")
-            .map(function () {
-              return $(this).val();
-            })
-            .get();
-          const resourceTags = $(".resource-tag-checkbox:checked")
-            .map(function () {
-              return $(this).val();
-            })
-            .get();
-          const searchQuery = $("#search-bar").val();
-
-          // Filter the data based on the selected tags
-          const filteredData = jsonData.filter(function (resource) {
-            if (!resource.tags.some((tag) => resourceTags.includes(tag.name))) {
-              return false;
-            }
-            if (
-              !resource.partner.tags.some((tag) =>
-                partnerTags.includes(tag.name)
-              )
-            ) {
-              return false;
-            }
-            return true;
+            // Store original order of resource boxes
+            $(".resource").each(function () {
+              originalOrder.push($(this).attr("id"));
+            });
           });
-          // If there is no search query, show all the filtered data
-          if (searchQuery === "") {
-            filteredData.forEach(function (resource) {
-              $("#resource-" + resource.id).show();
+
+          function updateResults() {
+            // Update the results based on the search query and filters
+            $(".resource").hide();
+            $("#no-resource-found").hide();
+            const partnerTags = $(".partner-tag-checkbox:checked")
+              .map(function () {
+                return $(this).val();
+              })
+              .get();
+            const resourceTags = $(".resource-tag-checkbox:checked")
+              .map(function () {
+                return $(this).val();
+              })
+              .get();
+            const searchQuery = $("#search-bar").val();
+
+            // Filter the data based on the selected tags
+            const filteredData = jsonData.filter(function (resource) {
+              if (!resource.tags.some((tag) => resourceTags.includes(tag.name))) {
+                return false;
+              }
+              if (
+                !resource.partner.tags.some((tag) =>
+                  partnerTags.includes(tag.name)
+                )
+              ) {
+                return false;
+              }
+              return true;
             });
-            if (filteredData.length === 0) {
-              // If there are no results, show the "No resources found" message
-              $("#no-resource-found").show();
-            }
-          } else {
-            // If there is a search query, use Fuse.js to search the filtered data
-            const fuse = new Fuse(filteredData, {
-              keys: [
-                "name",
-                "description",
-                "tags.name",
-                "partner.name",
-                "partner.description",
-                "partner.tags.name",
-              ],
-              threshold: 0.4,
-              useExtendedSearch: true,
-            });
-            const results = fuse.search(searchQuery);
-            if (results.length === 0) {
-              // If there are no results, show the "No resources found" message
-              $("#no-resource-found").show();
-            } else {
-              // If there are results, show the results, and reorder them based on the search query
-              $("#no-resource-found").hide();
-              results.forEach(function (result) {
-                $("#resource-" + result.item.id)
-                  .show()
-                  .detach()
-                  .appendTo("#resource-list");
+
+            // If there is no search query, show all the filtered data
+            if (searchQuery === "") {
+              filteredData.forEach(function (resource) {
+                $("#" + "resource-" + resource.id).show();
               });
+              if (filteredData.length === 0) {
+                // If there are no results, show the "No resources found" message
+                $("#no-resource-found").show();
+              } else {
+                // Restore original order
+                originalOrder.forEach(function (id) {
+                  $("#" + id).detach().appendTo("#resource-list");
+                });
+              }
+            } else {
+              // If there is a search query, use Fuse.js to search the filtered data
+              const fuse = new Fuse(filteredData, {
+                keys: [
+                  "name",
+                  "description",
+                  "tags.name",
+                  "partner.name",
+                  "partner.description",
+                  "partner.tags.name",
+                ],
+                threshold: 0.4,
+                useExtendedSearch: true,
+              });
+              const results = fuse.search(searchQuery);
+              if (results.length === 0) {
+                // If there are no results, show the "No resources found" message
+                $("#no-resource-found").show();
+              } else {
+                // If there are results, show the results, and reorder them based on the search query
+                $("#no-resource-found").hide();
+                results.forEach(function (result) {
+                  $("#" + "resource-" + result.item.id)
+                    .show()
+                    .detach()
+                    .appendTo("#resource-list");
+                });
+              }
             }
           }
-        }
-        // Update the results when the search query or filters change
-        $("#search-bar").on("input", updateResults);
-        $(".partner-tag-checkbox").on("change", updateResults);
-        $(".resource-tag-checkbox").on("change", updateResults);
 
-        // Show/hide filter menu on mobile
-        // When the "FILTERS" button is clicked, show the filter menu
-        // When the "CLOSE" button is clicked, hide the filter menu
-        function toggleMobileMenu() {
-          if ($("#filter-menu").is(":visible")) {
-            $("#filter-menu").hide();
-            $("#filter-menu-mobile-button-text").text("FILTERS");
-            $("#filter-menu-mobile-button-open-icon").show();
-            $("#filter-menu-mobile-button-close-icon").hide();
-          } else {
-            $("#filter-menu").show();
-            $("#filter-menu-mobile-button-text").text("CLOSE");
-            $("#filter-menu-mobile-button-open-icon").hide();
-            $("#filter-menu-mobile-button-close-icon").show();
+          // Update the results when the search query or filters change
+          $("#search-bar").on("input", updateResults);
+          $(".partner-tag-checkbox").on("change", updateResults);
+          $(".resource-tag-checkbox").on("change", updateResults);
+
+          // Show/hide filter menu on mobile
+          // When the "FILTERS" button is clicked, show the filter menu
+          // When the "CLOSE" button is clicked, hide the filter menu
+          function toggleMobileMenu() {
+            if ($("#filter-menu").is(":visible")) {
+              $("#filter-menu").hide();
+              $("#filter-menu-mobile-button-text").text("FILTERS");
+              $("#filter-menu-mobile-button-open-icon").show();
+              $("#filter-menu-mobile-button-close-icon").hide();
+            } else {
+              $("#filter-menu").show();
+              $("#filter-menu-mobile-button-text").text("CLOSE");
+              $("#filter-menu-mobile-button-open-icon").hide();
+              $("#filter-menu-mobile-button-close-icon").show();
+            }
           }
-        }
 
-        // When the "View Results" or "FILTER" button is clicked, toggle the filter menu
-        $("#filter-menu-mobile-button").on("click", toggleMobileMenu);
-        $("#view-results-mobile-button").on("click", toggleMobileMenu);
+          // When the "View Results" or "FILTER" button is clicked, toggle the filter menu
+          $("#filter-menu-mobile-button").on("click", toggleMobileMenu);
+          $("#view-results-mobile-button").on("click", toggleMobileMenu);
 
-        // Clear the search query and filters when the "Clear Filters" button is clicked and update the results
-        $("#clear-filters").on("click", function () {
-          $(".partner-tag-checkbox").prop("checked", true);
-          $(".resource-tag-checkbox").prop("checked", true);
-          $("#search-bar").val("");
-          updateResults();
+          // Clear the search query and filters when the "Clear Filters" button is clicked and update the results
+          $("#clear-filters").on("click", function () {
+            $(".partner-tag-checkbox").prop("checked", true);
+            $(".resource-tag-checkbox").prop("checked", true);
+            $("#search-bar").val("");
+            updateResults();
+          });
         });
-      });
-    </script>
+      </script>
   </head>
 
   <body class="overflow-hidden flex flex-col items-center justify-center">
