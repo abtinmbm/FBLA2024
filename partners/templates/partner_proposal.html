@@ -10,6 +10,22 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
+    <header class="bg-gray-100 w-full border-b flex justify-center h-16">
+      <div
+        class="w-full max-w-screen-2xl flex items-center justify-between py-2.5 px-5"
+      >
+        <h1 class="text-sm lg:text-xl font-semibold">
+          School Partner Directory
+        </h1>
+        <a
+          class="text-xs border p-2.5 bg-blue-600 hover:bg-blue-200 hover:text-blue-800 hover:border-blue-800 text-white rounded font-semibold"
+          href="{% url 'partner_list' %}"
+        >
+          HOME PAGE
+        </a>
+      </div>
+    </header>
+  <body>
     <style>
       /* Reset some default styles */
       body,
@@ -27,8 +43,28 @@
       }
 
       body {
-        font-family: Arial, sans-serif;
         background-color: #f5f5f5;
+        padding-top: 64px; /* Adjusted for header height */
+      }
+
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000; /* Ensure it's above other content */
+        background-color: #fff; /* Match background color */
+        border-bottom: 1px solid #ccc; /* Match border of original header */
+      }
+
+      footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000; /* Ensure it's above other content */
+        background-color: #fff; /* Match background color */
+        border-top: 1px solid #ccc; /* Match border of original footer */
       }
 
       form {
@@ -36,6 +72,8 @@
         padding: 20px;
         background-color: #fff;
         margin: auto;
+        margin-top: 20px; /* Adjusted for header height */
+        margin-bottom: 40px; /* Adjusted for footer height */
       }
 
       form div {
@@ -114,24 +152,22 @@
       <div class="flex flex-col space-y-2">
         <h1 class="text-4xl">Partner Form</h1>
         <p>
-          We are thrilled to extend an invitation for you to join our school's
-          Partner Directory Platform! As part of our ongoing efforts to foster
-          meaningful collaborations and strengthen community connections, we are
-          excited to create a dynamic directory that showcases the diverse range
-          of partnerships available to our school.
-        </p>
-        <p>
             Please complete the form below to submit your partnership proposal and create your account.
             Once submitted, you can create resources and your profile will be reviewed by our team. If approved,
-            your partnership will be added to our directory. Make sure you review our <a href="/terms" class="text-blue-500">terms and conditions</a> before submitting your proposal.
+            your partnership will be added to our directory.
 
-        </p>
-        <p>
-          Click <a href="/" class="text-blue-500">here</a> to return to the school directory.
         </p>
       </div>
       {% csrf_token %} {{ form }}
       <input type="submit" value="Submit" class="mt-5" />
     </form>
+    <footer
+      class="w-full bg-gray-100 border-t flex justify-center px-2.5 py-2 h-8 z-10"
+    >
+      <p class="text-xs text-gray-700">
+        <a href="/terms">Terms & Conditions</a> -
+        <a href="/admin/">Partner Login</a>
+      </p>
+    </footer>
   </body>
 </html>
