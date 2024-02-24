@@ -40,10 +40,10 @@ class PartnerProfile(models.Model):
         default="pending",
     )
     description = models.TextField(max_length=300)
-    website = models.URLField(blank=True)
+    website = models.URLField()
     logo = models.ImageField(blank=True, null=True)
     contact_email = models.EmailField()
-    contact_phone = models.CharField(max_length=255, blank=True)
+    contact_phone = models.CharField(max_length=255)
     tags = models.ManyToManyField(PartnerTag)
 
     def __str__(self):
