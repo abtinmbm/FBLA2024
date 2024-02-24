@@ -3,5 +3,4 @@ django-admin-interface==0.28.5
 django-ckeditor-5==0.2.11
 django-recaptcha==4.0.0
 pillow==10.2.0
-ckeditor --upgrade
 
