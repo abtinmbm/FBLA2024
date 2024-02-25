@@ -29,7 +29,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["fbla2024.pythonanywhere.com", "127.0.0.1"]
 
-STATIC_ROOT = BASE_DIR / "static"
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 
 # Application definition
 
@@ -50,7 +52,7 @@ INSTALLED_APPS = [
 RECAPTCHA_PUBLIC_KEY = "6LdR0GYpAAAAAFQd8khsm-MEJ4mtJIQHhR6hZFpU"
 RECAPTCHA_PRIVATE_KEY = "6LdR0GYpAAAAABMDSE-5ADg8Vm0amF393KoFFXKH"
 X_FRAME_OPTIONS = "SAMEORIGIN"
-SILENCED_SYSTEM_CHECKS = ["security.W019"]
+SILENCED_SYSTEM_CHECKS = ["security.W019, 'django_recaptcha.recaptha_test_key_error"]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -130,13 +132,14 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Set the media root and URL
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_ROOT = os.path.join(BASE_DIR, "media",)
 MEDIA_URL = "/media/"
 
 CKEDITOR_5_CONFIGS = {

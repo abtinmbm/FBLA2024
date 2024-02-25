@@ -9,8 +9,64 @@
     <link rel="shortcut icon" type="image/png" href="/media/school.png" >
 
     <!-- Include Tailwind CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="/static/tailwind.js"></script>
 </head>
+<style>
+    /* Reset some default styles */
+    body,
+    h1,
+    p,
+    div,
+    label,
+    input,
+    select,
+    option,
+    fieldset,
+    legend {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #f5f5f5;
+      padding-top: 64px; /* Adjusted for header height */
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000; /* Ensure it's above other content */
+      background-color: #fff; /* Match background color */
+      border-bottom: 1px solid #ccc; /* Match border of original header */
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000; /* Ensure it's above other content */
+      background-color: #fff; /* Match background color */
+      border-top: 1px solid #ccc; /* Match border of original footer */
+    }
+</style>
+<header class="bg-gray-100 w-full border-b flex justify-center h-16">
+    <div
+      class="w-full max-w-screen-2xl flex items-center justify-between py-2.5 px-5"
+    >
+      <h1 class="text-sm lg:text-xl font-semibold">
+        School Partner Directory
+      </h1>
+      <a
+        class="text-xs border p-2.5 bg-blue-600 hover:bg-blue-200 hover:text-blue-800 hover:border-blue-800 text-white rounded font-semibold"
+        href="{% url 'partner_list' %}"
+      >
+        HOME PAGE
+      </a>
+    </div>
+  </header>
 
 <body class="bg-gray-100">
     <div class="container mx-auto py-8">
@@ -39,6 +95,14 @@
                 <a href="mailto:admin@schoolpartnerdirectory.com" class="text-blue-500">admin@schoolpartnerdirectory.com</a>.</p>
         </div>
     </div>
+    <footer
+      class="w-full bg-gray-100 border-t flex justify-center px-2.5 py-2 h-8 z-10"
+    >
+      <p class="text-xs text-gray-700">
+        <a href="/terms">Terms & Conditions</a> -
+        <a href="/admin/">Partner Login</a>
+      </p>
+    </footer>
 </body>
 
 </html>
