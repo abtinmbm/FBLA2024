@@ -1,98 +1,57 @@
-<br/>
 <p align="center">
-  <a href="https://github.com/abtinmbm/FBLA2024">
-    <img src="https://raw.githubusercontent.com/abtinmbm/FBLA2024/main/media/school.png" alt="Logo" width="80" height="80">
-  </a>
-
-  <h3 align="center">School Partner Directory</h3>
-
-  <p align="center">
-    A platform to facilitate meaningful partnerships between schools and external stakeholders, fostering a collaborative ecosystem that enriches educational experiences and empowers students to thrive in a dynamic world.
-    <br/>
-    <br/>
-    <a href="https://fbla2024.pythonanywhere.com">View Demo</a>
-    .
-    <a href="https://github.com/abtinmbm/FBLA2024/issues">Report Bug</a>
-    .
-    <a href="https://github.com/abtinmbm/FBLA2024/issues">Request Feature</a>
-  </p>
+  <img src="media/school.png" alt="School Partner Directory logo" width="120">
 </p>
 
+# School Partner Directory
 
+**A full-stack directory that connects schools with local businesses, nonprofits and government partners, built with Django.**
+4th place of 32 teams, Coding & Programming, FBLA Canada National Leadership Conference 2024, after a live pitch and demo.
 
-## Table Of Contents
+[Live demo](https://fbla2024.pythonanywhere.com) · [Report a bug](https://github.com/abtinmbm/FBLA2024/issues)
 
-* [About the Project](#about-the-project)
-* [Built With](#built-with)
-* [Getting Started](#getting-started)
-  * [Prerequisites](#prerequisites)
-  * [Installation](#installation)
-* [Usage](#usage)
+## Features
 
-## About The Project
+- **Self-serve partner management:** school staff add partners, programs and opportunities (internships, volunteering, career programs) through profile and resource-sharing modules, without needing a developer. Seeded with 25+ organizations.
+- **Partner profiles** describing each organization's mission, services and areas of expertise.
+- **Fast search** with Fuse.js fuzzy matching, so typos and partial names still find the right partner.
+- **Rich content editing** with CKEditor 5, and reCAPTCHA on forms.
+- **Responsive UI** with Tailwind CSS and jQuery.
 
-Welcome to the School Partner Resource Directory, an innovative platform developed for the FBLA2024 competition, designed to bridge the gap between schools, community organizations, government entities, and businesses. Our platform serves as a dynamic hub where schools can seamlessly connect with partners across various sectors, empowering students to discover valuable opportunities for growth and collaboration.
+## Tech stack
 
-Comprehensive Partner Database: Our platform hosts an extensive directory of partners from diverse sectors, including local businesses, government agencies, nonprofit organizations, and community groups, providing schools with a rich ecosystem of potential collaborators.
+| Layer | Tools |
+| --- | --- |
+| Backend | Django, SQLite |
+| Frontend | HTML, Tailwind CSS, jQuery, Fuse.js |
+| Libraries | django-admin-interface, django-ckeditor-5, django-recaptcha |
+| Hosting | PythonAnywhere (hosting, migrations, static files, production debugging) |
 
-Customized Profiles: Partners can create detailed profiles showcasing their mission, services, and areas of expertise, allowing schools to make informed decisions when seeking collaborations that align with their goals and values.
+## Running locally
 
-Resource Sharing: Partners can share resources such as educational materials, internship opportunities, volunteer programs, and career development initiatives, empowering schools to provide students with valuable learning experiences beyond the classroom.
-
-
-
-## Built With
-
-- Our project is built with [Django](https://www.djangoproject.com/) for a solid foundation.
-- We use [django-admin-interface](https://pypi.org/project/django-admin-interface/) for streamlined admin panel theme and styling.
-- [django-ckeditor-5](https://pypi.org/project/django-ckeditor-5/) enables dynamic content creation.
-- Security is ensured with [django-recaptcha](https://pypi.org/project/django-recaptcha/).
-- HTML, CSS, and [Tailwind CSS](https://tailwindcss.com/) ensure sleek aesthetics and responsiveness.
-- Fast and relevant search results are provided by [Fuse.js](https://www.fusejs.io/).
-- Smooth interactivity is achieved with [jQuery](https://jquery.com/)
-- Deployed and hosted for free using [PythonAnywhere](https://www.pythonanywhere.com/)
-
-
-
-
-## Getting Started
-
-
-### Prerequisites
-
-Clone the repo:
-
-```sh
+```bash
 git clone https://github.com/abtinmbm/FBLA2024.git
+cd FBLA2024
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py loaddata demo     # sample partners and programs
+python manage.py runserver
 ```
 
-### Installation
+Then open http://127.0.0.1:8000/.
 
-To install the required packages, run the following command
-`pip install -r requirements.txt`
+To reset the local database from scratch (deletes all data):
 
+```bash
+rm db.sqlite3
+python manage.py migrate && python manage.py loaddata demo
+```
 
+### Configuration
 
+Secrets are read from environment variables. Without them the app runs in local development mode with Google's public reCAPTCHA test keys.
 
-## Usage
-
-After modifying models, new migrations must be generated:
-`python manage.py makemigrations`
-
-The generated migrated files must be applied to the database:
-`python manage.py migrations`
-
-You may import demo data with the following command:
-
-`python manage.py loaddata demo`
-
-Finally, run the server:
-
-`python manage.py runserver`
-
-#### RESET COMMAND (DESTRUCTIVE)
-Alternatively, the following commands can be used to destructively reset the server in one line:
-##### WINDOWS (LOCAL)
-`rm db.sqlite3 | python manage.py makemigrations | python manage.py migrate | python manage.py loaddata demo | python manage.py runserver`
-##### Linux (python-anywhere)
-`python manage.py makemigrations && python manage.py migrate && python manage.py loaddata demo`
+| Variable | Purpose |
+| --- | --- |
+| `DJANGO_SECRET_KEY` | Django secret key (required in production) |
+| `DJANGO_DEBUG` | `1` for development (default), `0` for production |
+| `RECAPTCHA_PUBLIC_KEY`, `RECAPTCHA_PRIVATE_KEY` | Your reCAPTCHA site keys |
