@@ -21,11 +21,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-j$sv@b802xuahqe5mt#mbgr)bsb^utbt_8zgw4uxk)6&lux*ze"
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# Secrets come from environment variables; the fallback is for local development only.
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "dev-only-insecure-key")
+DEBUG = os.environ.get("DJANGO_DEBUG", "1") == "1"
 
 ALLOWED_HOSTS = ["fbla2024.pythonanywhere.com", "127.0.0.1"]
 
@@ -49,10 +47,12 @@ INSTALLED_APPS = [
     "django_ckeditor_5",
 ]
 
-RECAPTCHA_PUBLIC_KEY = "6LdR0GYpAAAAAFQd8khsm-MEJ4mtJIQHhR6hZFpU"
-RECAPTCHA_PRIVATE_KEY = "6LdR0GYpAAAAABMDSE-5ADg8Vm0amF393KoFFXKH"
+# reCAPTCHA keys come from the environment; without them django-recaptcha uses Google's test keys.
+if os.environ.get("RECAPTCHA_PUBLIC_KEY"):
+    RECAPTCHA_PUBLIC_KEY = os.environ["RECAPTCHA_PUBLIC_KEY"]
+    RECAPTCHA_PRIVATE_KEY = os.environ["RECAPTCHA_PRIVATE_KEY"]
 X_FRAME_OPTIONS = "SAMEORIGIN"
-SILENCED_SYSTEM_CHECKS = ["security.W019, 'django_recaptcha.recaptha_test_key_error"]
+SILENCED_SYSTEM_CHECKS = ["security.W019", "django_recaptcha.recaptcha_test_key_error"]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
